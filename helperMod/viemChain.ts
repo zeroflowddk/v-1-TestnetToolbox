@@ -23,6 +23,29 @@ export const Sepolia = defineChain({
     }
 });
 
+export const Scroll = defineChain({
+    id:534351,
+    name:'Scroll Sepolia',
+    network: 'scroll',
+    nativeCurrency:{
+        decimals: 18, 
+        name: 'Ether',
+        symbol: 'ETH'
+    }, 
+    rpcUrls: {
+        default: {
+            http: ['https://sepolia-rpc.scroll.io'],
+        },
+        public: {
+            http : ['https://sepolia-rpc.scroll.io']
+        }
+    },
+    blockExplorers: {
+        default: {name:'Explorer', url:'https://sepolia-blockscout.scroll.io'},
+    }
+});
+
+
 export const TaikoL2 = defineChain({
     id:167007,
     name:'Sepolia',
