@@ -1,10 +1,8 @@
-import { toBytes, toHex } from "viem";
 import { getSepoliaClient, getSepoliaWallet, getTaikoClient, getTaikoWallet } from "../../helperMod/viemHelper";
 import { Taiko } from "../../setting";
 import { bridgeAbi } from "./abi";
-import { TaikoContract } from "./contract";
 
-class TaikoModule {
+class TaikoBridgeModule {
     private privateKey:string
     constructor(privateKey:string){
         this.privateKey = privateKey;
@@ -13,7 +11,7 @@ class TaikoModule {
         const sepoliaClient = getSepoliaClient();
         const sepoliaWallet = getSepoliaWallet({ privateKey: `0x${this.privateKey}` });
         const getBalance = await sepoliaClient.getBalance(sepoliaWallet.account);
-        const amount = getBalance / BigInt(100) * BigInt(Taiko.amountProcent);
+        const amount = getBalance / BigInt(100) * BigInt(Taiko.amountProcentIn);
         const argsBridge = [1,sepoliaWallet.account.address, 11155111, 167007, sepoliaWallet.account.address, sepoliaWallet.account.address, sepoliaWallet.account.address, amount, 1350000000900000, 140000, "0x", ""];
         console.log(argsBridge)
         const txPayload = await sepoliaWallet.writeContract({
@@ -31,7 +29,7 @@ class TaikoModule {
         const taikoClient = getTaikoClient();
         const taikoWallet = getTaikoWallet({ privateKey: `0x${this.privateKey}` });
         const getBalance = await taikoClient.getBalance(taikoWallet.account);
-        const amount = getBalance / BigInt(100) * BigInt(Taiko.amountProcent);
+        const amount = getBalance / BigInt(100) * BigInt(Taiko.amountProcentOut);
         const argsBridge = [0,taikoWallet.account.address, 167007, 11155111, taikoWallet.account.address, taikoWallet.account.address, taikoWallet.account.address, amount, 1350000000900000, 140000, "0x", ""];
         console.log(argsBridge)
         const txPayload = await taikoWallet.writeContract({
