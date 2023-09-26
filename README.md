@@ -3,3 +3,5 @@ const taiko = new TaikoModule('приватник');
 // taiko.BridgeDepositeL1L2();
 // taiko.bridgeDepositeL1L2()
 
+#### npm run scroll  - запускает скролл файл dex.ts в папке скролл
+#### если хочешь поменять - иди в package.json и в конце огромной строки будет путь до файла ./ - директория ../  - выход из директории ./../../ - выход и двойной директории
