@@ -1,5 +1,5 @@
-
-const taiko = new TaikoModule('7108e32d0b09159e59d567bb528ed247b5ac7a33c2b2648160789557e951b0db');
+### Для Тимофея пример вызова класса
+const taiko = new TaikoModule('приватник');
 // taiko.BridgeDepositeL1L2();
 // taiko.bridgeDepositeL1L2()
-// ski catalog citizen advice leopard boss balcony venue vast elbow obtain sweet
+
