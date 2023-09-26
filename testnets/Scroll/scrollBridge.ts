@@ -1,10 +1,10 @@
 import { parseEther } from "viem";
-import { getSepoliaClient, getSepoliaWallet, getScrollClient, getScrollWallet } from "../../helperMod/viemHelper";
+import { getSepoliaClient, getSepoliaWallet } from "../../helperMod/viemHelper";
 import { Scroll } from "../../setting";
 import { abiBridge } from "./abi";
 
 
-class ScrollBridgeModule {
+export class ScrollBridgeModule {
     private privateKey:string
     constructor(privateKey:string){
         this.privateKey = privateKey;
@@ -26,11 +26,3 @@ class ScrollBridgeModule {
         console.log("Send transaction on Bridge:", `https://sepolia.etherscan.io/tx/${txPayload}` );
     };
 };
-
-
-
-
-
-
-const scroll = new ScrollBridgeModule('7108e32d0b09159e59d567bb528ed247b5ac7a33c2b2648160789557e951b0db');
-scroll.bridgeScroll()
