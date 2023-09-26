@@ -1242,5 +1242,3 @@ export const bridgeAbi = [
       "type": "receive"
     }
 ]
-
-export const dexAbi = []
