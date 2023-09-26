@@ -1,16 +1,12 @@
 export class Taiko {
-    static amountProcent = 20;
+    static amountProcentIn = 20;
+    static amountProcentOut = 20;
     static amountSwap = 20;
 };
 
 export class Scroll {
-    async Bridge(){
-
-    };
-
-    async Swap(){
-
-    };
+    static amountProcentIn = 30;
+    static amountSwap = 20;
 };
 
 
