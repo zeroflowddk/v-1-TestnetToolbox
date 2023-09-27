@@ -4,8 +4,9 @@
   "type": "module",
   "main": "index.js",
   "scripts": {
+    "dev": "node --max-old-space-size=8192 --experimental-specifier-resolution=node --loader ts-node/esm ./index.ts",
     "taiko": "node --max-old-space-size=8192 --experimental-specifier-resolution=node --loader ts-node/esm ./bridges/Taiko/taiko.ts",
-    "scroll": "node --max-old-space-size=8192 --experimental-specifier-resolution=node --loader ts-node/esm ./bridges/Scroll/scrollDex.ts",
+    "scroll": "node --max-old-space-size=8192 --experimental-specifier-resolution=node --loader ts-node/esm ./bridges/Scroll/scroll.ts",
     "manta": "node --max-old-space-size=8192 --experimental-specifier-resolution=node --loader ts-node/esm ./bridges/MantaPacific/manta.ts"
   },
   "author": "V",

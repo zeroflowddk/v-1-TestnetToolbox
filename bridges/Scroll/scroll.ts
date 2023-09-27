@@ -1,12 +1,12 @@
 import { parseEther } from "viem";
-import { getSepoliaClient, getSepoliaWallet } from "../../helperMod/viemHelper";
+import { getScrollClient, getScrollWallet, getSepoliaClient, getSepoliaWallet } from "../../helperMod/viemHelper";
 import { Scroll } from "../../setting";
 import { abiBridge } from "./abi";
 
 
 export class ScrollBridgeModule {
-    private privateKey:string
-    constructor(privateKey:string){
+    private privateKey:string[]
+    constructor(privateKey:string[]){
         this.privateKey = privateKey;
     };
 

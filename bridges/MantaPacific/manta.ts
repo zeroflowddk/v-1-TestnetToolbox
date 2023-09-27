@@ -4,8 +4,8 @@ import { Manta } from "../../setting";
 
 
 export class MantaBridgeModule {
-    private privateKey:string
-    constructor(privateKey:string){
+    private privateKey:string[]
+    constructor(privateKey:string[]){
         this.privateKey = privateKey;
     };
 
@@ -24,6 +24,3 @@ export class MantaBridgeModule {
         console.log(txPayload);
     };
 };
-
-const manta = new MantaBridgeModule('7108e32d0b09159e59d567bb528ed247b5ac7a33c2b2648160789557e951b0db');
-manta.bridgeManta()
