@@ -1,5 +1,28 @@
 import { defineChain } from 'viem'
 
+export const Goerli = defineChain({
+    id:5,
+    name:'Goerli',
+    network: 'goerli',
+    nativeCurrency:{
+        decimals: 18, 
+        name: 'Ether',
+        symbol: 'ETH'
+    }, 
+    rpcUrls: {
+        default: {
+            http: ['https://ethereum-goerli.publicnode.com'],
+        },
+        public: {
+            http : ['https://ethereum-goerli.publicnode.com']
+        }
+    },
+    blockExplorers: {
+        default: {name:'Explorer', url:'https://goerli.etherscan.io'},
+    }
+});
+
+
 
 export const Sepolia = defineChain({
     id:11155111,

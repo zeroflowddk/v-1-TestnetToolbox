@@ -1,5 +1,5 @@
 import { createWalletClient, createPublicClient, http, PublicClient, Hex, WalletClient, HttpTransport, Chain, PrivateKeyAccount, parseEther, parseGwei, formatGwei} from "viem";
-import { Sepolia, TaikoL2, Scroll } from "./viemChain";
+import { Sepolia, TaikoL2, Scroll, Goerli } from "./viemChain";
 //import {sepolia, taikoJolnir } from 'viem/chains'
 import {privateKeyToAccount} from "viem/accounts";
 import fs from 'fs';
@@ -27,6 +27,15 @@ export function getScrollClient(): PublicClient {
 
 export function getScrollWallet({privateKey}:{privateKey:Hex}):WalletClient<HttpTransport,Chain,PrivateKeyAccount>  {
     return createWalletClient({chain:Scroll, account:privateKeyToAccount(privateKey), transport:http() });
+};
+
+
+export function getMantaClient(): PublicClient {
+    return createPublicClient({ chain:Goerli, transport:http() });
+};
+
+export function getMantaWallet({privateKey}:{privateKey:Hex}):WalletClient<HttpTransport,Chain,PrivateKeyAccount>  {
+    return createWalletClient({chain:Goerli, account:privateKeyToAccount(privateKey), transport:http() });
 };
 
 
