@@ -1242,3 +1242,73 @@ export const bridgeAbi = [
       "type": "receive"
     }
 ]
+export const fabric = [
+  {
+    "type": "function",
+    "stateMutability": "payable",
+    "outputs": [],
+    "name": "createContracts",
+    "inputs": [
+      {
+        "type": "uint256",
+        "name": "numberOfContracts",
+        "internalType": "uint256"
+      }
+    ]
+  },
+  {
+    "type": "function",
+    "stateMutability": "view",
+    "outputs": [
+      {
+        "type": "address",
+        "name": "",
+        "internalType": "address payable"
+      }
+    ],
+    "name": "owner",
+    "inputs": []
+  },
+  {
+    "type": "function",
+    "stateMutability": "view",
+    "outputs": [
+      {
+        "type": "address",
+        "name": "",
+        "internalType": "address"
+      }
+    ],
+    "name": "userToContracts",
+    "inputs": [
+      {
+        "type": "address",
+        "name": "",
+        "internalType": "address"
+      },
+      {
+        "type": "uint256",
+        "name": "",
+        "internalType": "uint256"
+      }
+    ]
+  },
+  {
+    "type": "function",
+    "stateMutability": "nonpayable",
+    "outputs": [],
+    "name": "withdrawFromContract",
+    "inputs": [
+      {
+        "type": "address",
+        "name": "contractAddress",
+        "internalType": "address"
+      },
+      {
+        "type": "uint256",
+        "name": "amount",
+        "internalType": "uint256"
+      }
+    ]
+  }
+]

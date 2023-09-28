@@ -732,407 +732,28 @@ export const abiBridge = [
     }
 ]
 
-export const DodoAbi = [
+export const fabric = [
   {
-    "type": "constructor",
-    "stateMutability": "nonpayable",
+    "type": "function",
+    "stateMutability": "payable",
+    "outputs": [],
+    "name": "createContracts",
     "inputs": [
       {
+        "type": "uint256",
+        "name": "numberOfContracts",
+        "internalType": "uint256"
+      }
+    ]
+  },
+  {
+    "type": "function",
+    "stateMutability": "view",
+    "outputs": [
+      {
         "type": "address",
-        "name": "weth",
+        "name": "",
         "internalType": "address payable"
-      },
-      {
-        "type": "address",
-        "name": "dodoApproveProxy",
-        "internalType": "address"
-      },
-      {
-        "type": "address",
-        "name": "feeReceiver",
-        "internalType": "address"
-      }
-    ]
-  },
-  {
-    "type": "event",
-    "name": "OrderHistory",
-    "inputs": [
-      {
-        "type": "address",
-        "name": "fromToken",
-        "internalType": "address",
-        "indexed": false
-      },
-      {
-        "type": "address",
-        "name": "toToken",
-        "internalType": "address",
-        "indexed": false
-      },
-      {
-        "type": "address",
-        "name": "sender",
-        "internalType": "address",
-        "indexed": false
-      },
-      {
-        "type": "uint256",
-        "name": "fromAmount",
-        "internalType": "uint256",
-        "indexed": false
-      },
-      {
-        "type": "uint256",
-        "name": "returnAmount",
-        "internalType": "uint256",
-        "indexed": false
-      }
-    ],
-    "anonymous": false
-  },
-  {
-    "type": "event",
-    "name": "OwnershipTransferred",
-    "inputs": [
-      {
-        "type": "address",
-        "name": "previousOwner",
-        "internalType": "address",
-        "indexed": true
-      },
-      {
-        "type": "address",
-        "name": "newOwner",
-        "internalType": "address",
-        "indexed": true
-      }
-    ],
-    "anonymous": false
-  },
-  {
-    "type": "fallback",
-    "stateMutability": "payable"
-  },
-  {
-    "type": "function",
-    "stateMutability": "view",
-    "outputs": [
-      {
-        "type": "address",
-        "name": "",
-        "internalType": "address"
-      }
-    ],
-    "name": "_DODO_APPROVE_PROXY_",
-    "inputs": []
-  },
-  {
-    "type": "function",
-    "stateMutability": "view",
-    "outputs": [
-      {
-        "type": "address",
-        "name": "",
-        "internalType": "address"
-      }
-    ],
-    "name": "_WETH_",
-    "inputs": []
-  },
-  {
-    "type": "function",
-    "stateMutability": "nonpayable",
-    "outputs": [],
-    "name": "addApproveWhiteList",
-    "inputs": [
-      {
-        "type": "address",
-        "name": "contractAddr",
-        "internalType": "address"
-      }
-    ]
-  },
-  {
-    "type": "function",
-    "stateMutability": "nonpayable",
-    "outputs": [],
-    "name": "addWhiteList",
-    "inputs": [
-      {
-        "type": "address",
-        "name": "contractAddr",
-        "internalType": "address"
-      }
-    ]
-  },
-  {
-    "type": "function",
-    "stateMutability": "nonpayable",
-    "outputs": [],
-    "name": "changeRouteFeeRate",
-    "inputs": [
-      {
-        "type": "uint256",
-        "name": "newFeeRate",
-        "internalType": "uint256"
-      }
-    ]
-  },
-  {
-    "type": "function",
-    "stateMutability": "nonpayable",
-    "outputs": [],
-    "name": "changeRouteFeeReceiver",
-    "inputs": [
-      {
-        "type": "address",
-        "name": "newFeeReceiver",
-        "internalType": "address"
-      }
-    ]
-  },
-  {
-    "type": "function",
-    "stateMutability": "nonpayable",
-    "outputs": [],
-    "name": "changeTotalWeight",
-    "inputs": [
-      {
-        "type": "uint256",
-        "name": "newTotalWeight",
-        "internalType": "uint256"
-      }
-    ]
-  },
-  {
-    "type": "function",
-    "stateMutability": "payable",
-    "outputs": [
-      {
-        "type": "uint256",
-        "name": "receiveAmount",
-        "internalType": "uint256"
-      }
-    ],
-    "name": "dodoMutliSwap",
-    "inputs": [
-      {
-        "type": "uint256",
-        "name": "fromTokenAmount",
-        "internalType": "uint256"
-      },
-      {
-        "type": "uint256",
-        "name": "minReturnAmount",
-        "internalType": "uint256"
-      },
-      {
-        "type": "uint256[]",
-        "name": "splitNumber",
-        "internalType": "uint256[]"
-      },
-      {
-        "type": "address[]",
-        "name": "midToken",
-        "internalType": "address[]"
-      },
-      {
-        "type": "address[]",
-        "name": "assetFrom",
-        "internalType": "address[]"
-      },
-      {
-        "type": "bytes[]",
-        "name": "sequence",
-        "internalType": "bytes[]"
-      },
-      {
-        "type": "bytes",
-        "name": "feeData",
-        "internalType": "bytes"
-      },
-      {
-        "type": "uint256",
-        "name": "deadLine",
-        "internalType": "uint256"
-      }
-    ]
-  },
-  {
-    "type": "function",
-    "stateMutability": "payable",
-    "outputs": [
-      {
-        "type": "uint256",
-        "name": "receiveAmount",
-        "internalType": "uint256"
-      }
-    ],
-    "name": "externalSwap",
-    "inputs": [
-      {
-        "type": "address",
-        "name": "fromToken",
-        "internalType": "address"
-      },
-      {
-        "type": "address",
-        "name": "toToken",
-        "internalType": "address"
-      },
-      {
-        "type": "address",
-        "name": "approveTarget",
-        "internalType": "address"
-      },
-      {
-        "type": "address",
-        "name": "swapTarget",
-        "internalType": "address"
-      },
-      {
-        "type": "uint256",
-        "name": "fromTokenAmount",
-        "internalType": "uint256"
-      },
-      {
-        "type": "uint256",
-        "name": "minReturnAmount",
-        "internalType": "uint256"
-      },
-      {
-        "type": "bytes",
-        "name": "feeData",
-        "internalType": "bytes"
-      },
-      {
-        "type": "bytes",
-        "name": "callDataConcat",
-        "internalType": "bytes"
-      },
-      {
-        "type": "uint256",
-        "name": "deadLine",
-        "internalType": "uint256"
-      }
-    ]
-  },
-  {
-    "type": "function",
-    "stateMutability": "view",
-    "outputs": [
-      {
-        "type": "bool",
-        "name": "",
-        "internalType": "bool"
-      }
-    ],
-    "name": "isApproveWhiteListedContract",
-    "inputs": [
-      {
-        "type": "address",
-        "name": "",
-        "internalType": "address"
-      }
-    ]
-  },
-  {
-    "type": "function",
-    "stateMutability": "view",
-    "outputs": [
-      {
-        "type": "bool",
-        "name": "",
-        "internalType": "bool"
-      }
-    ],
-    "name": "isWhiteListedContract",
-    "inputs": [
-      {
-        "type": "address",
-        "name": "",
-        "internalType": "address"
-      }
-    ]
-  },
-  {
-    "type": "function",
-    "stateMutability": "payable",
-    "outputs": [
-      {
-        "type": "uint256",
-        "name": "receiveAmount",
-        "internalType": "uint256"
-      }
-    ],
-    "name": "mixSwap",
-    "inputs": [
-      {
-        "type": "address",
-        "name": "fromToken",
-        "internalType": "address"
-      },
-      {
-        "type": "address",
-        "name": "toToken",
-        "internalType": "address"
-      },
-      {
-        "type": "uint256",
-        "name": "fromTokenAmount",
-        "internalType": "uint256"
-      },
-      {
-        "type": "uint256",
-        "name": "minReturnAmount",
-        "internalType": "uint256"
-      },
-      {
-        "type": "address[]",
-        "name": "mixAdapters",
-        "internalType": "address[]"
-      },
-      {
-        "type": "address[]",
-        "name": "mixPairs",
-        "internalType": "address[]"
-      },
-      {
-        "type": "address[]",
-        "name": "assetTo",
-        "internalType": "address[]"
-      },
-      {
-        "type": "uint256",
-        "name": "directions",
-        "internalType": "uint256"
-      },
-      {
-        "type": "bytes[]",
-        "name": "moreInfos",
-        "internalType": "bytes[]"
-      },
-      {
-        "type": "bytes",
-        "name": "feeData",
-        "internalType": "bytes"
-      },
-      {
-        "type": "uint256",
-        "name": "deadLine",
-        "internalType": "uint256"
-      }
-    ]
-  },
-  {
-    "type": "function",
-    "stateMutability": "view",
-    "outputs": [
-      {
-        "type": "address",
-        "name": "",
-        "internalType": "address"
       }
     ],
     "name": "owner",
@@ -1140,104 +761,44 @@ export const DodoAbi = [
   },
   {
     "type": "function",
-    "stateMutability": "nonpayable",
-    "outputs": [],
-    "name": "removeApproveWhiteList",
-    "inputs": [
-      {
-        "type": "address",
-        "name": "contractAddr",
-        "internalType": "address"
-      }
-    ]
-  },
-  {
-    "type": "function",
-    "stateMutability": "nonpayable",
-    "outputs": [],
-    "name": "removeWhiteList",
-    "inputs": [
-      {
-        "type": "address",
-        "name": "contractAddr",
-        "internalType": "address"
-      }
-    ]
-  },
-  {
-    "type": "function",
-    "stateMutability": "nonpayable",
-    "outputs": [],
-    "name": "renounceOwnership",
-    "inputs": []
-  },
-  {
-    "type": "function",
     "stateMutability": "view",
     "outputs": [
+      {
+        "type": "address",
+        "name": "",
+        "internalType": "address"
+      }
+    ],
+    "name": "userToContracts",
+    "inputs": [
+      {
+        "type": "address",
+        "name": "",
+        "internalType": "address"
+      },
       {
         "type": "uint256",
         "name": "",
         "internalType": "uint256"
       }
-    ],
-    "name": "routeFeeRate",
-    "inputs": []
-  },
-  {
-    "type": "function",
-    "stateMutability": "view",
-    "outputs": [
-      {
-        "type": "address",
-        "name": "",
-        "internalType": "address"
-      }
-    ],
-    "name": "routeFeeReceiver",
-    "inputs": []
+    ]
   },
   {
     "type": "function",
     "stateMutability": "nonpayable",
     "outputs": [],
-    "name": "superWithdraw",
+    "name": "withdrawFromContract",
     "inputs": [
       {
         "type": "address",
-        "name": "token",
+        "name": "contractAddress",
         "internalType": "address"
-      }
-    ]
-  },
-  {
-    "type": "function",
-    "stateMutability": "view",
-    "outputs": [
+      },
       {
         "type": "uint256",
-        "name": "",
+        "name": "amount",
         "internalType": "uint256"
       }
-    ],
-    "name": "totalWeight",
-    "inputs": []
-  },
-  {
-    "type": "function",
-    "stateMutability": "nonpayable",
-    "outputs": [],
-    "name": "transferOwnership",
-    "inputs": [
-      {
-        "type": "address",
-        "name": "newOwner",
-        "internalType": "address"
-      }
     ]
-  },
-  {
-    "type": "receive",
-    "stateMutability": "payable"
   }
 ]

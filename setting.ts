@@ -5,7 +5,8 @@ export class Taiko {
 };
 
 export class Scroll {
-    static amountProcentIn = 30;
+    static amountProcentIn = 30; 
+    static numberContracts = 5;
 };
 
 export class Manta {
