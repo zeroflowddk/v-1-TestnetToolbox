@@ -1,26 +1,26 @@
-import { parseEther } from "viem";
-import { getScrollClient, getScrollWallet } from "../../helperMod/viemHelper";
-import { Scroll } from "../../setting";
 import { fabric } from "./abi";
+import { parseEther } from "viem";
+import { getScrollWallet } from "../../helperMod/viemHelper";
+import { Scroll } from "../../setting";
 
 
-export class ScrollDexModule {
+export class TaikoDexModule {
     private privateKey:string[]
     constructor(privateKey:string[]){
         this.privateKey = privateKey;
     };
 
-    async scrollFabric():Promise<void>{
+    async taikoFabric():Promise<void>{
         const scrollWallet = getScrollWallet({ privateKey: `0x${this.privateKey}` });
         const numberContracts = Scroll.numberContracts;
         const argsDex = [numberContracts];
         const txPayload = await scrollWallet.writeContract({
-            address: "0x51a0f1CFcF0304E4Cea2F63479AE62AcBBC7D075",
+            address: "0xF69992828179C1D4A13E048c1B6692fB656372fA",
             abi: fabric,
             args: argsDex,
             functionName: 'createContracts',
             value: BigInt(numberContracts) * parseEther('0.001'),
         });
-        console.log("Send transaction on Bridge:", `https://sepolia-blockscout.scroll.io/address/${txPayload}` );
+        console.log("Send transaction on fabric:", `https://explorer.jolnir.taiko.xyz/address/${txPayload}` );
     };
 };

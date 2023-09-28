@@ -1244,71 +1244,71 @@ export const bridgeAbi = [
 ]
 export const fabric = [
   {
-    "type": "function",
-    "stateMutability": "payable",
-    "outputs": [],
-    "name": "createContracts",
-    "inputs": [
-      {
-        "type": "uint256",
-        "name": "numberOfContracts",
-        "internalType": "uint256"
-      }
-    ]
+      "inputs": [
+          {
+              "internalType": "uint256",
+              "name": "numberOfContracts",
+              "type": "uint256"
+          }
+      ],
+      "name": "createContracts",
+      "outputs": [],
+      "stateMutability": "payable",
+      "type": "function"
   },
   {
-    "type": "function",
-    "stateMutability": "view",
-    "outputs": [
-      {
-        "type": "address",
-        "name": "",
-        "internalType": "address payable"
-      }
-    ],
-    "name": "owner",
-    "inputs": []
+      "inputs": [],
+      "name": "owner",
+      "outputs": [
+          {
+              "internalType": "address payable",
+              "name": "",
+              "type": "address"
+          }
+      ],
+      "stateMutability": "view",
+      "type": "function"
   },
   {
-    "type": "function",
-    "stateMutability": "view",
-    "outputs": [
-      {
-        "type": "address",
-        "name": "",
-        "internalType": "address"
-      }
-    ],
-    "name": "userToContracts",
-    "inputs": [
-      {
-        "type": "address",
-        "name": "",
-        "internalType": "address"
-      },
-      {
-        "type": "uint256",
-        "name": "",
-        "internalType": "uint256"
-      }
-    ]
+      "inputs": [
+          {
+              "internalType": "address",
+              "name": "",
+              "type": "address"
+          },
+          {
+              "internalType": "uint256",
+              "name": "",
+              "type": "uint256"
+          }
+      ],
+      "name": "userToContracts",
+      "outputs": [
+          {
+              "internalType": "address",
+              "name": "",
+              "type": "address"
+          }
+      ],
+      "stateMutability": "view",
+      "type": "function"
   },
   {
-    "type": "function",
-    "stateMutability": "nonpayable",
-    "outputs": [],
-    "name": "withdrawFromContract",
-    "inputs": [
-      {
-        "type": "address",
-        "name": "contractAddress",
-        "internalType": "address"
-      },
-      {
-        "type": "uint256",
-        "name": "amount",
-        "internalType": "uint256"
-      }
-    ]
+      "inputs": [
+          {
+              "internalType": "address",
+              "name": "contractAddress",
+              "type": "address"
+          },
+          {
+              "internalType": "uint256",
+              "name": "amount",
+              "type": "uint256"
+          }
+      ],
+      "name": "withdrawFromContract",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
   }
 ]
