@@ -9,7 +9,10 @@
     "scroll": "node --max-old-space-size=8192 --experimental-specifier-resolution=node --loader ts-node/esm ./bridges/Scroll/scroll.ts",
     "manta": "node --max-old-space-size=8192 --experimental-specifier-resolution=node --loader ts-node/esm ./bridges/MantaPacific/manta.ts"
   },
-  "author": "V",
+  "author": {
+    "name": "V",
+    "url": "https://t.me/viemcrypto"
+  },
   "license": "ISC",
   "devDependencies": {
     "@types/js-yaml": "^4.0.6",

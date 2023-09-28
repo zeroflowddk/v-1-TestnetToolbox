@@ -1,7 +1,7 @@
-import { fabric } from "./abi";
+import { fabric, swap } from "./abi";
 import { parseEther } from "viem";
-import { getScrollWallet } from "../../helperMod/viemHelper";
-import { Scroll } from "../../setting";
+import { getTaikoWallet } from "../../helperMod/viemHelper";
+import { Taiko } from "../../setting";
 
 
 export class TaikoDexModule {
@@ -11,10 +11,10 @@ export class TaikoDexModule {
     };
 
     async taikoFabric():Promise<void>{
-        const scrollWallet = getScrollWallet({ privateKey: `0x${this.privateKey}` });
-        const numberContracts = Scroll.numberContracts;
+        const taikoWallet = getTaikoWallet({ privateKey: `0x${this.privateKey}` });
+        const numberContracts = Taiko.numberTaikoContracts;
         const argsDex = [numberContracts];
-        const txPayload = await scrollWallet.writeContract({
+        const txPayload = await taikoWallet.writeContract({
             address: "0xF69992828179C1D4A13E048c1B6692fB656372fA",
             abi: fabric,
             args: argsDex,

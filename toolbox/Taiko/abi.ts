@@ -1312,3 +1312,18 @@ export const fabric = [
       "type": "function"
   }
 ]
+
+export const swap = [
+  {
+    "name": "swapETHForExactTokens",
+    "outputs": [
+      {
+        "internalType": "uint256[]",
+        "name": "amounts",
+        "type": "uint256[]"
+      }
+    ],
+    "stateMutability": "payable",
+    "type": "function"
+  },
+]

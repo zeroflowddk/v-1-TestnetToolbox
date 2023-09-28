@@ -5,7 +5,7 @@ import { ScrollDexModule } from "../toolbox/Scroll/dex";
 import { TaikoDexModule } from "../toolbox/Taiko/dex";
 import { parseFile } from "./viemHelper";
 
-const privateKey = parseFile('./privateKey.txt');
+export const privateKey = parseFile('./privateKey.txt');
 
 export const mantaBridge = new MantaBridgeModule(privateKey);
 export const taikoBridge = new TaikoBridgeModule(privateKey);
