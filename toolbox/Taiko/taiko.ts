@@ -2,6 +2,7 @@ import { getSepoliaClient, getSepoliaWallet, getTaikoClient, getTaikoWallet } fr
 import { Taiko } from "../../setting";
 import { bridgeAbi } from "./abi";
 
+
 export class TaikoBridgeModule {
     private privateKey:string[]
     constructor(privateKey:string[]){
