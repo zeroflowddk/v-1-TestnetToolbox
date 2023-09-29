@@ -1,7 +1,7 @@
 export class Modules {
     static taiko: true;
-    static scroll: true;
-    static manta: true;
+    static scroll: false;
+    static manta: false;
 };
 
 

@@ -12,7 +12,6 @@ export class ScrollDexModule {
     async scrollFabric():Promise<void>{
         const scrollWallet = getScrollWallet({ privateKey: `0x${this.privateKey}` });
         const numberContracts = Scroll.numberScrollContracts;
-        const contractAddress = []
         const argsDex = [numberContracts];
         const txPayload = await scrollWallet.writeContract({
             address: "0x51a0f1CFcF0304E4Cea2F63479AE62AcBBC7D075",
