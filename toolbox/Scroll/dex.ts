@@ -3,7 +3,6 @@ import { getScrollClient, getScrollWallet } from "../../helperMod/viemHelper";
 import { Scroll } from "../../setting";
 import { fabric } from "./abi";
 
-
 export class ScrollDexModule {
     private privateKey:string[]
     constructor(privateKey:string[]){
@@ -12,7 +11,8 @@ export class ScrollDexModule {
 
     async scrollFabric():Promise<void>{
         const scrollWallet = getScrollWallet({ privateKey: `0x${this.privateKey}` });
-        const numberContracts = Scroll.numberContracts;
+        const numberContracts = Scroll.numberScrollContracts;
+        const contractAddress = []
         const argsDex = [numberContracts];
         const txPayload = await scrollWallet.writeContract({
             address: "0x51a0f1CFcF0304E4Cea2F63479AE62AcBBC7D075",

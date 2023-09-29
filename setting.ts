@@ -8,28 +8,25 @@ export class Modules {
 
 export class Taiko {
     //bridge taiko setup
-    static amountBridgeProcentIn = 10;
-    static amountBridgeProcentOut = 20;
+    static amountBridgeProcentIn = [10, 20];
+    //taiko swap setup
+    static amountInProcentDex  = [10,20];
+    static swapPath = ['eth', 'horse', 'ttkjo']
     //dex taiko setup
     static numberTaikoContracts = 5;  
 };
 
 
-
 export class Scroll {
     //scroll bridge setup
-    static amountProcentIn = 30; 
-    static numberContracts = 5;
+    static amountInProcent = [10,15]; 
      //dex scroll setup
     static numberScrollContracts = 5;
 };
 
 
-
-
 export class Manta {
-    static amountProcentIn = 30;
-    static amountProcentOut = 20;
+    static amountProcentInBridge = [10,20];
 };
 
 
