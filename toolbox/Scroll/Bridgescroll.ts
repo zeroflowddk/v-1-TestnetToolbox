@@ -1,12 +1,12 @@
 import { parseEther } from "viem";
-import { getScrollClient, getScrollWallet, getSepoliaClient, getSepoliaWallet } from "../../helperMod/viemHelper";
+import { getSepoliaClient, getSepoliaWallet } from "../../helperMod/viemHelper";
 import { Scroll } from "../../setting";
 import { abiBridge } from "./abi";
-
+import chalk from "chalk";
 
 export class ScrollBridgeModule {
-    private privateKey:string[]
-    constructor(privateKey:string[]){
+    private privateKey:string
+    constructor(privateKey:string){
         this.privateKey = privateKey;
     };
 
@@ -25,6 +25,6 @@ export class ScrollBridgeModule {
             functionName: 'depositETH',
             value: amount + BigInt(parseEther("0.0012")),
         });
-        console.log("Send transaction on Bridge:", `https://sepolia.etherscan.io/tx/${txPayload}` );
+        console.log(chalk.green("Send transaction on Bridge:", `https://sepolia.etherscan.io/tx/${txPayload}` ));
     };
 };

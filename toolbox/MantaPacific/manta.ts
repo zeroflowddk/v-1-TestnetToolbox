@@ -1,6 +1,7 @@
 import { getMantaClient, getMantaWallet } from "../../helperMod/viemHelper";
 import { mantaBridgeAbi } from "./abi";
 import { Manta } from "../../setting";
+import chalk from "chalk";
 
 
 export class MantaBridgeModule {
@@ -23,6 +24,6 @@ export class MantaBridgeModule {
             functionName: 'depositETH',
             value: amount
         });
-        console.log(txPayload);
+        console.log(chalk.green(`Send to Manta Bridge https://pacific-explorer.manta.network/tx/${txPayload}`));
     };
 };
