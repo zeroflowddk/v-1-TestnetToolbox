@@ -1,7 +1,7 @@
 import { ScrollDexModule } from "./toolbox/Scroll/dex";
 import { ScrollBridgeModule } from "./toolbox/Scroll/Bridgescroll";
 import { parseFile } from "./helperMod/viemHelper";
-import { Modules, Taiko, Scroll } from "./setting";
+import { Modules, Taiko, Scroll, Manta } from "./setting";
 import chalk from "chalk";
 import { TaikoBridgeModule } from "./toolbox/Taiko/taiko";
 import { TaikoDexModule } from "./toolbox/Taiko/dex";
@@ -59,29 +59,30 @@ async function run() {
       if (Scroll.fabric) {
         const scrollDex = new ScrollDexModule(wallet[i]);
         await scrollDex.scrollFabric(Scroll.numberScrollContracts);
-        await sleep(60);
+        await sleep(Scroll.sleep);
       };
     };
     if (Modules.taiko) {
       if (Taiko.bridge) {
         const taikoBridge = new TaikoBridgeModule(wallet[i]);
         await taikoBridge.bridgeDepositeL1L2();
-        await sleep(60);
+        await sleep(Taiko.sleep);
       };
       if (Taiko.swap) {
         const taikoDex = new TaikoDexModule(wallet[i]);
         await taikoDex.taikoSwap(Taiko.toToken);
-        await sleep(60);
+        await sleep(Taiko.sleep);
       };
       if (Taiko.fabric) {
         const taikoDex = new TaikoDexModule(wallet[i]);
         await taikoDex.taikoFabric(Taiko.numberTaikoContracts);
-        await sleep(60);
+        await sleep(Taiko.sleep);
       };
     };
     if (Modules.manta) {
       const mantaBridge = new ScrollBridgeModule(wallet[i]);
       await mantaBridge.bridgeScroll();
+      await sleep(Manta.sleep);
     };
   };
 };
