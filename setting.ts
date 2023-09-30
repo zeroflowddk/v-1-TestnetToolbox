@@ -1,8 +1,9 @@
 export class Modules {
     static taiko =  true;
-    static scroll = true;
+    static scroll = false;
     static manta = false;
 };
+
 
 
 export class Taiko {
@@ -11,11 +12,11 @@ export class Taiko {
     static amountBridgeProcentIn = [10, 20];
     //taiko swap setup
     static swap = false;
-    static toToken = 'horse'; // eth - > horse
+    static toToken = 'horse'; // ttkjo
     static amountInProcentDex  = [10,20];
     //dex taiko setup
     static fabric = true;
-    static numberTaikoContracts = 5;  
+    static numberTaikoContracts = 1;  
 };
 
 
@@ -25,7 +26,7 @@ export class Scroll {
     static amountInProcent = [5,10]; 
      //dex scroll setup
     static fabric = true;
-    static numberScrollContracts = 5;
+    static numberScrollContracts = 1;
 };
 
 

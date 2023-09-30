@@ -37,6 +37,10 @@ export function getMantaWallet({privateKey}:{privateKey:Hex}):WalletClient<HttpT
     return createWalletClient({chain:Goerli, account:privateKeyToAccount(privateKey), transport:http() });
 };
 
+export function sleep(seconds: number): Promise<void> {
+    return new Promise((resolve) => setTimeout(resolve, seconds * 1000));
+};
+
 
 export const parseFile = (file: any) => {
     const data = fs.readFileSync(file, "utf-8");
