@@ -1452,3 +1452,19 @@ export const taikoSwap = [
   },
 ];
 
+export const mint = [{
+  "type": "function",
+  "name": "mint",
+  "inputs": [
+    {
+      "name": "params",
+      "type": "tuple",
+      "components": [
+        {"name": "tokenAddress", "type": "address"},
+        {"name": "tokenId", "type": "uint24"},
+        {"name": "data", "type": "bytes32[]"},
+        {"name": "amount", "type": "uint8"}
+      ]
+    }
+  ]
+}];

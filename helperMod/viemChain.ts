@@ -71,8 +71,8 @@ export const Scroll = defineChain({
 
 export const TaikoL2 = defineChain({
     id:167007,
-    name:'Sepolia',
-    network: 'sepolia',
+    name:'Taiko',
+    network: 'Taiko',
     nativeCurrency:{
         decimals: 18, 
         name: 'Ether',
