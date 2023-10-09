@@ -14,8 +14,10 @@ export class Taiko {
     static toToken = 'horse'; // ttkjo
     static amountInProcentDex  = [10,20];
     //dex taiko setup
-    static fabric = true;
+    static fabric = false;
     static numberTaikoContracts = 1;  
+    //dex taiko nft
+    static mint = true;
 };
 
 

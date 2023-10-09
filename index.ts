@@ -4,6 +4,7 @@ import { parseFile } from "./helperMod/viemHelper";
 import { Modules, Taiko, Scroll, Manta } from "./setting";
 import chalk from "chalk";
 import { TaikoBridgeModule } from "./toolbox/Taiko/taiko";
+import { mintNftTaiko } from "./toolbox/Taiko/nft";
 import { TaikoDexModule } from "./toolbox/Taiko/dex";
 import { sleep } from "./helperMod/viemHelper";
 
@@ -33,6 +34,9 @@ async function run() {
     }
     if (Taiko.fabric) {
       enabledModules.push('Taiko Fabric');
+    }
+    if (Taiko.mint) {
+      enabledModules.push('Taiko Mint');
     }
   } else {
     disabledModules.push('Taiko');
@@ -76,6 +80,11 @@ async function run() {
       if (Taiko.fabric) {
         const taikoDex = new TaikoDexModule(wallet[i]);
         await taikoDex.taikoFabric(Taiko.numberTaikoContracts);
+        await sleep(Taiko.sleep);
+      };
+      if (Taiko.mint) {
+        const taikoMint = new mintNftTaiko(wallet[i]);
+        await taikoMint.mintNftHelloTaiko();
         await sleep(Taiko.sleep);
       };
     };
